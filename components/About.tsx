@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { User } from 'lucide-react';
+import Image from 'next/image';
 import { stats } from '@/lib/data';
 
 function Counter({ value }: { value: number }) {
@@ -60,8 +60,14 @@ export default function About() {
         >
           <div className="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto">
             <div className="absolute inset-0 rounded-3xl bg-glow-primary opacity-30 blur-2xl" />
-            <div className="relative w-full h-full rounded-3xl glass flex items-center justify-center overflow-hidden">
-              <User size={96} className="text-muted" strokeWidth={1} />
+            <div className="relative w-full h-full rounded-3xl glass overflow-hidden">
+              <Image
+              src="/images/profile.jpg"
+              alt="Shreevishnu K"
+              fill
+              priority
+              className="object-cover object-center"
+              />
             </div>
           </div>
         </motion.div>
